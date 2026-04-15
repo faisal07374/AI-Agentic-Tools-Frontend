@@ -13,7 +13,7 @@ export default function JsonFormatter() {
     if (!input.trim()) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:8000/format-json', {
+      const res = await axios.post('https://ai-agentic-tools-backend/format-json', {
         text: input,
       });
       setOutput(res.data.formatted_json);
