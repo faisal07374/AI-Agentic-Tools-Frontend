@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Navbar from './components/Header';
 import JsonFormatter from './components/JsonFormatter';
 import SqlAgent from './components/SqlAgent';
 import './App.css';
 
 function App() {
+  // State to track which page is currently active
+  const [activeTab, setActiveTab] = useState('json');
+
   return (
     <div className="App">
-      <header style={{ backgroundColor: '#1e293b', padding: '20px', color: 'white', marginBottom: '20px' }}>
-        <h1>AI Agent Dashboard</h1>
-      </header>
-      <main>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 20 }}>
-          <div>
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      
+      <main style={{ padding: '0 40px' }}>
+        <div className="container">
+          {activeTab === 'json' ? (
             <JsonFormatter />
-          </div>
-          <div>
+          ) : (
             <SqlAgent />
-          </div>
+          )}
         </div>
       </main>
     </div>
