@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Copy, 
-  RefreshCw, 
-  Trash2, 
+  Copy,
   FileJson, 
   Share2, 
   Save, 
