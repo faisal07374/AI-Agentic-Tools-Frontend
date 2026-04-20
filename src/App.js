@@ -1,5 +1,6 @@
 import React from 'react';
 import JsonFormatter from './components/JsonFormatter';
+import SqlAgent from './components/SqlAgent';
 import './App.css';
 
 function App() {
@@ -9,7 +10,14 @@ function App() {
         <h1>AI Agent Dashboard</h1>
       </header>
       <main>
-        <JsonFormatter />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 20 }}>
+          <div>
+            <JsonFormatter />
+          </div>
+          <div>
+            <SqlAgent />
+          </div>
+        </div>
       </main>
     </div>
   );
